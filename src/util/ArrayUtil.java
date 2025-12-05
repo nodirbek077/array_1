@@ -7,7 +7,7 @@ public final class ArrayUtil {
     public static int[] getArrayElements() {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Massiv o'lchamini kiriting: ");
+        System.out.print("Enter array size: ");
         int n = input.nextInt();
         int counter = 0;
         int arrayElement;
@@ -16,13 +16,13 @@ public final class ArrayUtil {
         while (n != counter) {
             counter++;
 
-            System.out.print("Massivning " + counter + "- elementini kiriting: ");
+            System.out.print("Enter the " + counter + " - element of the array: ");
             arrayElement = input.nextInt();
 
             numbers[counter - 1] = arrayElement;
         }
 
-        System.out.print("Siz kiritgan massiv elementlari: " + Arrays.toString(numbers));
+        System.out.print("Array elements that you entered: " + Arrays.toString(numbers));
         System.out.println();
         return numbers;
     }
