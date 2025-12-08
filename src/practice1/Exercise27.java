@@ -15,24 +15,22 @@ public class Exercise27 {
 
         Scanner input = new Scanner(System.in);
         System.out.print("Enter the number r: ");
-        int r = input.nextInt();
 
-        // r = 1, sum = 3
-        int maxSum = numbers[0] + numbers[1];
-        int maxIndex = 0;
+        int r = input.nextInt();
+        int index = 0;
+        int min = Math.abs(r - (numbers[0] + numbers[1]));
+        System.out.println("The minimum number is " + min);
+
         for (int i = 0; i < arrayLength - 1; i++) {
             int currentSum = numbers[i] + numbers[i + 1];
-            int currentSumWithR = currentSum - r;
-            maxIndex = i;
-            System.out.print(currentSumWithR + " ");
-//            System.out.print(maxIndex);
+            int currentSumWithR = Math.abs(r - currentSum);
+            if (currentSumWithR < min) {
+                min = currentSumWithR;
+                index = i;
+            }
         }
-//
-//        int element1 = numbers[maxIndex];
-//        int element2 = numbers[maxIndex + 1];
-//
-//        System.out.println("Element 1: " + element1);
-//        System.out.println("Element 2: " + element2);
 
+        System.out.println();
+        System.out.println("(" + numbers[index] + "," + numbers[index + 1] + ")");
     }
 }
