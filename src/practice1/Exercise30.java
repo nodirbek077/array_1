@@ -1,4 +1,4 @@
-package practice1;
+package practice1;//Amaliyot: massiv elementlarini consolga chiqarish
 
 import util.ArrayUtil;
 
