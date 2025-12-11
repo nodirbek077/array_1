@@ -22,22 +22,34 @@ public class Exercise9 {
 
         //1. find minimum and maximum numbers
         for (int i = 0; i < n; i++) {
-            if (numbers[i] < min){
+            if (numbers[i] < min) {
                 min = numbers[i];
-                minIndex = i;
+//                minIndex = i;
             }
 
-            if (numbers[i] > max){
+            if (numbers[i] > max) {
                 max = numbers[i];
-                maxIndex = i;
+//                maxIndex = i;
             }
 
-            for (int j = minIndex; j < maxIndex; j++) {
+            /*for (int j = minIndex; j < maxIndex; j++) {
                 System.out.print(numbers[j] + " ");
+            }*/
+        }
+        System.out.println(min + " " + max);
+        System.out.println(Arrays.toString(numbers));
+        //2. get array elements
+
+        for (int i = 0; i < n; i++) {
+            if (numbers[i] == min) {
+                numbers[i] = 0;
+            }
+
+            if (numbers[i] == max) {
+                numbers[i] = 0;
             }
         }
-//        System.out.println(min + " " + max);
-//        System.out.println(Arrays.toString(numbers));
-        //2. get array elements
+
+        System.out.println(Arrays.toString(numbers));
     }
 }
