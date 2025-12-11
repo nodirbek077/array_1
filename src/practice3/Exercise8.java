@@ -45,10 +45,10 @@ public class Exercise8 {
         int temp;
         for (int i = 0; i < n; i++) {
             if (i >= k && i <= h) {
-                int l = h-k+1;
+                int l = h - k + 1;
                 temp = numbers[i];
-                numbers[i] = numbers[h-i+1];
-                numbers[h-i+1] = temp;
+                numbers[i] = numbers[h - i + 2];
+                numbers[h - i + 1] = temp;
                 if (i == l / 2) {
                     break;
                 }
@@ -56,7 +56,5 @@ public class Exercise8 {
         }
 
         System.out.println(Arrays.toString(numbers));
-
-
     }
 }
