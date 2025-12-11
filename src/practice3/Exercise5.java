@@ -2,7 +2,6 @@ package practice3;
 
 import util.ArrayUtil;
 
-import javax.swing.text.TabExpander;
 import java.util.Arrays;
 
 /**
