@@ -14,42 +14,44 @@ public class Exercise9 {
         int[] numbers = ArrayUtil.getArrayElements();
         int n = numbers.length;
 
-        //1, 6, -3
         int min = numbers[0];
         int max = numbers[0];
         int minIndex = 0;
         int maxIndex = 0;
 
-        //1. find minimum and maximum numbers
+        if (n == 1 || n == 2) {
+            System.out.println("Array length must be more than 2.");
+            return;
+        }
+
+        //1. find minimum and maximum indexes
         for (int i = 0; i < n; i++) {
             if (numbers[i] < min) {
                 min = numbers[i];
-//                minIndex = i;
+                minIndex = i;
             }
 
             if (numbers[i] > max) {
                 max = numbers[i];
-//                maxIndex = i;
-            }
-
-            /*for (int j = minIndex; j < maxIndex; j++) {
-                System.out.print(numbers[j] + " ");
-            }*/
-        }
-        System.out.println(min + " " + max);
-        System.out.println(Arrays.toString(numbers));
-        //2. get array elements
-
-        for (int i = 0; i < n; i++) {
-            if (numbers[i] == min) {
-                numbers[i] = 0;
-            }
-
-            if (numbers[i] == max) {
-                numbers[i] = 0;
+                maxIndex = i;
             }
         }
 
+        //2. set to zero value between min and max indexes
+        for (int i = 0; i < n - 1; i++) {
+            if (i > minIndex && i < maxIndex)
+                numbers[i] = 0;
+
+            if (i > maxIndex && i < minIndex)
+                numbers[i] = 0;
+
+            if (maxIndex + 1 == minIndex || minIndex + 1 == maxIndex) {
+                System.out.println("Minimum and maximum elements of an array came subsequently");
+                return;
+            }
+        }
+
+        //3. get array elements that has just changed
         System.out.println(Arrays.toString(numbers));
     }
 }
