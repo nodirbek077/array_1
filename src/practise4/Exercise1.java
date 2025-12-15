@@ -1,5 +1,5 @@
 package practise4;
-//Amaliyot4: Birnechta massive bilan ishlash
+//Amaliyot4: Bir nechta massive bilan ishlash
 
 import util.ArrayUtil;
 

@@ -12,9 +12,22 @@ import java.util.Arrays;
 public class Exercise4 {
     public static void main(String[] args) {
         int[] a = ArrayUtil.getArrayElements();
-        int[] b = new int[a.length];
+        int[] tempArr = new int[a.length];
 
-        System.out.println(Arrays.toString(a));
-        System.out.println(Arrays.toString(b));
+        //[1, 6, 8, 10]
+        int index = 0;
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] % 2 == 0) {
+                tempArr[index] = a[i];
+                index++;
+            }
+        }
+
+        int[] b = new int[index];
+        for (int i = 0; i < index; i++) {
+            b[i] = tempArr[i];
+        }
+        System.out.println("New created array: " + Arrays.toString(b));
+        System.out.println("Number of elements in array: " + index);
     }
 }
