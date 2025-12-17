@@ -5,28 +5,29 @@ import util.ArrayUtil;
 import java.util.Arrays;
 
 /**
- * 3. n ta elementdan tashkil topgan massiv berilgan. Massiv elementlari orasidan toqlarini o'chiruvchi programma tuzilsin. Hosil bo'lgan massiv elementlar soni va elementlari chiqarilsin.
+ * 3. n ta elementdan tashkil topgan massiv berilgan.
+ * Massiv elementlari orasidan toqlarini o'chiruvchi programma tuzilsin.
+ * Hosil bo'lgan massiv elementlar soni va elementlari chiqarilsin.
  */
 public class Exercise3 {
     public static void main(String[] args) {
         int[] nums = ArrayUtil.getArrayElements();
-        //nums: [1, 1, 2]
-        int counter = 0;
-        int k = nums.length;
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = 1; j <= nums.length - 1; j++) {
-                if (nums[i] == nums[j]){
-                    counter++;
+        int n = nums.length;
 
-                    if (counter == 1) {
-                        nums[i + 1] = 0;
-                        k = k - 1;
-                    }
-                }
+        int[] temp = new int[n];
+        int index = 0;
+        for (int i = 0; i < n; i++) {
+            if (nums[i] % 2 == 0) {
+                temp[index] = nums[i];
+                index++;
             }
-//            counter = 0;
         }
-        System.out.println(Arrays.toString(nums));
-        System.out.println(k);
+
+        int[] temp2 = new int[index];
+        for (int i = 0; i < index; i++) {
+            temp2[i] = temp[i];
+        }
+        System.out.println("The number of elements in the array: " + index);
+        System.out.println("The elements of an array: " + Arrays.toString(temp2));
     }
 }
