@@ -2,7 +2,6 @@ package practise5;
 
 import util.ArrayUtil;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.Arrays;
 
 /**
@@ -16,15 +15,17 @@ public class Exercise7 {
         int j = 0;
 
         for (int i = 0; i < nums.length; i++) {
-            int count = 0;
+            boolean isDuplicate = false;
 
             for (int k = 0; k < j; k++) {
                 if (nums[k] == nums[i]) {
-                    count++;
+                    isDuplicate = true;
+                    break;
                 }
             }
 
-            if (count < 2) {
+            //if the element doesn't exist in the array, then we need to write it
+            if (!isDuplicate) {
                 nums[j] = nums[i];
                 j++;
             }
