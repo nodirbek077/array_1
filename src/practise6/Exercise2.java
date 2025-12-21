@@ -14,27 +14,22 @@ public class Exercise2 {
         int[] nums = ArrayUtil.getArrayElements();
 
         //[3, 1, 8, 4, 2, 7]
-        for (int i = 0; i < nums.length; i++) {
-//            System.out.println("i = " + i);
-            int min = nums[i];
+        for (int i = 0; i < nums.length - 1; i++) {
+            int minIndex = i + 1;
+            int min = nums[i + 1];
 
             for (int j = i + 1; j < nums.length; j++) {
                 if (nums[j] < min) {
-                    min = nums[j];
-                    System.out.println(i + ", min:" + min);
+                    minIndex = j;
                 }
-            }
 
-//            System.out.println(minIndex);
-/*
-            for (int j = i + 1; j < nums.length; j++) {
                 if (nums[i] > nums[minIndex]) {
                     int temp = nums[i];
                     nums[i] = nums[minIndex];
                     nums[minIndex] = temp;
                 }
-            }*/
+            }
         }
-//        System.out.println(Arrays.toString(nums));
+        System.out.println(Arrays.toString(nums));
     }
 }
