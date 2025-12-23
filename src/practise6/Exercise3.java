@@ -15,20 +15,21 @@ import java.util.Arrays;
 public class Exercise3 {
     public static void main(String[] args) {
         int[] nums = ArrayUtil.getArrayElements();
+
         //[3, 1, 8, 4, 2, 7]
         for (int i = 1; i < nums.length; i++) {
-            for (int j = i - 1; j > 0; j--) {
-                //1. chack element if less than previous element
-                if (nums[i] < nums[i - 1]) {
-                    //2. move item to right
-//                    int temp = nums[i];
-//                    nums[i] = nums[j];
-//                    nums[j] = temp;
+            /*for (int j = i - 1; j >= 0; j--) {
+                if (nums[i] < nums[j]) {
 
-                    nums[j + 1] = nums[j];
-//                    nums[i - 1] = nums[i];
                 }
+            }*/
+            int j = i - 1;
+            int key = nums[i];
+            while (j >= 0 && key < nums[j]) {
+                nums[j + 1] = nums[j];
+                j--;
             }
+            nums[j + 1] = key;
         }
         System.out.println(Arrays.toString(nums));
     }
