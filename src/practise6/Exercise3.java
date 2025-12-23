@@ -11,18 +11,12 @@ import java.util.Arrays;
  * Keyin a[2] element saralangan elementlar (a[0], a[1]) orasiga shunday joylashtiriladiki,
  * natijada a[0], a[1], a[2] tartiblangan xolatda bo'ladi.
  * Shu tartibda har bir element tartiblangan elementlar orasiga qo'shib boriladi.
+ * Example: [3, 1, 8, 4, 2, 7]
  */
 public class Exercise3 {
     public static void main(String[] args) {
         int[] nums = ArrayUtil.getArrayElements();
-
-        //[3, 1, 8, 4, 2, 7]
         for (int i = 1; i < nums.length; i++) {
-            /*for (int j = i - 1; j >= 0; j--) {
-                if (nums[i] < nums[j]) {
-
-                }
-            }*/
             int j = i - 1;
             int key = nums[i];
             while (j >= 0 && key < nums[j]) {
